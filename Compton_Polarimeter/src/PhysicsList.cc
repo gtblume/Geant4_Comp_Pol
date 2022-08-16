@@ -70,7 +70,7 @@ void PhysicsList::ConstructProcess()
 #include "G4PolarizedIonisation.hh"
 #include "G4PolarizedBremsstrahlung.hh"
 #include "G4PolarizedAnnihilation.hh"
-#include "G4LowECapture.hh"
+// #include "G4LowECapture.hh"
 
 void PhysicsList::ConstructEM()
 {
@@ -86,7 +86,7 @@ void PhysicsList::ConstructEM()
       pmanager->AddDiscreteProcess(new G4PolarizedPhotoElectric);
       pmanager->AddDiscreteProcess(new G4PolarizedCompton);
       pmanager->AddDiscreteProcess(new G4PolarizedGammaConversion);
-      pmanager->AddDiscreteProcess(new G4LowECapture);
+      // pmanager->AddDiscreteProcess(new G4LowECapture);
 
       } else if (particleName == "e-") {
 

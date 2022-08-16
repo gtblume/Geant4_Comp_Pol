@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------
 # Setup the project
-cmake_minimum_required(VERSION 3.16...3.21)
-project(PM1)
+cmake_minimum_required(VERSION 2.8)
+project(C1)
 
 #----------------------------------------------------------------------------
 # Find Geant4 package, activating all available UI and Vis drivers by default
@@ -32,26 +32,25 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
-add_executable(Pomegranate Pomegranate.cc ${sources} ${headers})
-target_link_libraries(Pomegranate ${Geant4_LIBRARIES})
+add_executable(Compton Compton.cc ${sources} ${headers})
+target_link_libraries(Compton ${Geant4_LIBRARIES})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
 # build B1. This is so that we can run the executable directly because it
 # relies on these scripts being in the current working directory.
 #
-set(POMEGRANATE_SCRIPTS
-  Pomegranate.in
-  Pomegranate.out
+set(COMPTON_SCRIPTS
+  Compton.in
+  Compton.out
   init_vis.mac
   run1.mac
-  run2.mac
   vis.mac
   random.mac
   B_Field_Full_cm.TABLE
   )
 
-foreach(_script ${POMEGRANATE_SCRIPTS})
+foreach(_script ${COMPTON_SCRIPTS})
   configure_file(
     ${PROJECT_SOURCE_DIR}/${_script}
     ${PROJECT_BINARY_DIR}/${_script}
@@ -63,9 +62,9 @@ endforeach()
 # For internal Geant4 use - but has no effect if you build this
 # example standalone
 #
-add_custom_target(PM1 DEPENDS Pomegranate)
+add_custom_target(C1 DEPENDS Compton)
 
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
 #
-install(TARGETS Pomegranate DESTINATION bin)
+install(TARGETS Compton DESTINATION bin)
