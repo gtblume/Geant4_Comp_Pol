@@ -107,8 +107,7 @@ G4LogicalVolume* logicAir =
   new G4LogicalVolume(solidAir,          //its solid
                       Air,           //its material
                       "Air");            //its name
-
-G4VPhysicalVolume* physAir =
+                      
   new G4PVPlacement(0,                     //no rotation
                     G4ThreeVector(0,0,4*cm),       //at (0,0,0)
                     logicAir,            //its logical volume
