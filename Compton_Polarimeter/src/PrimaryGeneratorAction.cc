@@ -20,7 +20,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
   fParticleGun->SetParticleDefinition(particle);
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
   fParticleGun->SetParticleEnergy(5*MeV);
-  fParticleGun->SetParticlePolarization(G4ThreeVector(0,0,1));
+  fParticleGun->SetParticlePolarization(G4ThreeVector(0,0,-1));
 
 }
 
@@ -32,9 +32,13 @@ PrimaryGeneratorAction::~PrimaryGeneratorAction()
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
 
-  // G4double envSizeZ =60*cm;
+// this can be adjusted to be whatever distribution wanted
+  G4double envSizeXY =20*cm;
 
-  fParticleGun->SetParticlePosition(G4ThreeVector(0*cm,0*cm,-30*cm));
+  G4double x0 = 0.04 * envSizeXY * (G4UniformRand()-0.5);
+  G4double y0 = 0.04 * envSizeXY * (G4UniformRand()-0.5);
+
+  fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,-80*cm));
 
   // fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0,0,1));
 

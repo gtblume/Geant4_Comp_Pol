@@ -13,7 +13,7 @@ TabulatedField3D::TabulatedField3D(const char* filename,
   :fZoffset(zOffset),invertX(false),invertY(false),invertZ(false)
 {
 
-  double lenUnit= cm;
+  double lenUnit= 2*mm;
   double fieldUnit= tesla;
   G4cout << "\n-----------------------------------------------------------"
 	 << "\n      Magnetic field"
@@ -101,9 +101,9 @@ TabulatedField3D::TabulatedField3D(const char* filename,
   // G4cout << " Read values of field from file " << filename << G4endl;
   G4cout << " ---> assumed the order:  x, y, z, Bx, By, Bz "
 	 << "\n ---> Min values x,y,z: "
-	 << minx/cm << " " << miny/cm << " " << minz/cm << " cm "
+	 << minx/(2*mm) << " " << miny/(2*mm) << " " << minz/(2*mm) << " mm "
 	 << "\n ---> Max values x,y,z: "
-	 << maxx/cm << " " << maxy/cm << " " << maxz/cm << " cm "
+	 << maxx/(2*mm) << " " << maxy/(2*mm) << " " << maxz/(2*mm) << " mm "
 	 << "\n ---> The field will be offset by " << zOffset/cm << " cm " << G4endl;
 
   // Should really check that the limits are not the wrong way around.
@@ -112,15 +112,15 @@ TabulatedField3D::TabulatedField3D(const char* filename,
   if (maxz < minz) {swap(maxz,minz); invertZ = true;}
   G4cout << "\nAfter reordering if neccesary"
 	 << "\n ---> Min values x,y,z: "
-	 << minx/cm << " " << miny/cm << " " << minz/cm << " cm "
+	 << minx/(2*mm) << " " << miny/(2*mm) << " " << minz/(2*mm) << " mm "
 	 << " \n ---> Max values x,y,z: "
-	 << maxx/cm << " " << maxy/cm << " " << maxz/cm << " cm ";
+	 << maxx/(2*mm) << " " << maxy/(2*mm) << " " << maxz/(2*mm) << " mm ";
 
   dx = maxx - minx;
   dy = maxy - miny;
   dz = maxz - minz;
   G4cout << "\n ---> Dif values x,y,z (range): "
-	 << dx/cm << " " << dy/cm << " " << dz/cm << " cm in z "
+	 << dx/(2*mm) << " " << dy/(2*mm) << " " << dz/(2*mm) << "mm in z "
 	 << "\n-----------------------------------------------------------" << G4endl;
 }
 

@@ -15,6 +15,7 @@ EventAction::EventAction()
  fTotalEnergyDepositCOREEMIN(0.),
  fTotalEnergyDepositBGOEPLUS(0.),
  fTotalEnergyDepositCOREEPLUS(0.),
+ fTotalEnergyDepositBGOfront(0.),
  fKin(0.)
 { }
 
@@ -36,6 +37,7 @@ void EventAction::BeginOfEventAction( const G4Event*)
  fTotalEnergyDepositCOREEMIN = 0.;
  fTotalEnergyDepositBGOEPLUS = 0.;
  fTotalEnergyDepositCOREEPLUS = 0.;
+ fTotalEnergyDepositBGOfront = 0.;
  fKin = 0.;
 }
 
@@ -54,5 +56,6 @@ void EventAction::EndOfEventAction( const G4Event*)
   if (fTotalEnergyDepositCOREPhoton != 0.) analysisManager->FillH1(15, fTotalEnergyDepositCOREPhoton/MeV);
   if (fTotalEnergyDepositCOREEMIN != 0.) analysisManager->FillH1(16, fTotalEnergyDepositCOREEMIN/MeV);
   if (fTotalEnergyDepositCOREEPLUS != 0.) analysisManager->FillH1(17, fTotalEnergyDepositCOREEPLUS/MeV);
+  if (fTotalEnergyDepositBGOfront != 0.) analysisManager->FillH1(21, fTotalEnergyDepositBGOfront/MeV);
   // if (fKin != 0.) analysisManager->FillH1(5, fKin/MeV);
 }

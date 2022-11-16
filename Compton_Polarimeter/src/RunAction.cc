@@ -48,23 +48,29 @@ RunAction::RunAction()
 analysisManager->CreateH1("Prior to Core", "Kinetic Energy Prior to Core", 1000, 0, 5.1); //1
 analysisManager->CreateH1("In BGO", "Energy Deposited in BGO", 51, 0, 5.1); //2
 analysisManager->CreateH1("Prior to Crystal", "Kinetic Energy Prior to Crystal", 1000, 0, 5.1); //3
-analysisManager->CreateH1("In Core", "Energy Deposited in Core", 51, 0, 5.1); //2
-analysisManager->CreateH1("After Crystal", "Kinetic Energy Remaining", 1000, 0, 5.1); //4
-analysisManager->CreateH1("Prior to Core (P)", "Kinetic Energy Prior to Core Photon Only", 3000, 0, 5.1); //1
-analysisManager->CreateH1("Prior to Core (e-)", "Kinetic Energy Prior to Core Electron Only", 1000, 0, 5.1); //2
-analysisManager->CreateH1("Prior to Core (e+)", "Kinetic Energy Prior to Core Positron Only", 1000, 0, 5.1); //3
-analysisManager->CreateH1("In BGO (P)", "Energy Deposited in BGO Photon Only", 51, 0, 5.1); //2
-analysisManager->CreateH1("In BGO (e-)", "Energy Deposited in BGO Electron Only", 51, 0, 5.1); //4
-analysisManager->CreateH1("In BGO (e+)", "Energy Deposited in BGO Position Only", 51, 0, 5.1); //1
-analysisManager->CreateH1("Prior to Crystal (P)", "Kinetic Energy Prior to Crystal Photon Only", 3000, 0, 5.1); //2
-analysisManager->CreateH1("Prior to Crystal (e-)", "Kinetic Energy Prior to Crystal Electron Only", 1000, 0, 5.1); //3
-analysisManager->CreateH1("Prior to Crystal (e+)", "Kinetic Energy Prior to Crystal Position Only", 1000, 0, 5.1); //2
-analysisManager->CreateH1("In Core (P)", "Energy Deposited in Core Photon Only", 51, 0, 5.1); //4
-analysisManager->CreateH1("In Core (e-)", "Energy Deposited in Core Electron Only", 51, 0, 5.1); //1
-analysisManager->CreateH1("In Core (e+)", "Energy Deposited in Core Positron Only", 51, 0, 5.1); //2
-analysisManager->CreateH1("After Crystal (P)", "Kinetic Energy Remaining Photon Only", 3000, 0, 5.1); //3
-analysisManager->CreateH1("After Crystal (e-)", "Kinetic Energy Remaining Electron Only", 1000, 0, 5.1); //2
-analysisManager->CreateH1("After Crystal (e+)", "Kinetic Energy Remaining Positron Only", 1000, 0, 5.1); //4
+analysisManager->CreateH1("In Core", "Energy Deposited in Core", 51, 0, 5.1); //4
+analysisManager->CreateH1("After Crystal", "Kinetic Energy Remaining", 1000, 0, 5.1); //5
+//
+analysisManager->CreateH2("X-ray Strikes", "x,y", 30, -10, 10, 30, -10, 10); //1
+analysisManager->CreateH2("Beam Distribution", "x,y", 30, -10, 10, 30, -10, 10); //2
+// analysisManager->CreateH1("y", "y", 300, 0, 5.1); //2
+analysisManager->CreateH1("Prior to Core (P)", "Kinetic Energy Prior to Core Photon Only", 3000, 0, 5.1); //6
+analysisManager->CreateH1("Prior to Core (e-)", "Kinetic Energy Prior to Core Electron Only", 1000, 0, 5.1); //7
+analysisManager->CreateH1("Prior to Core (e+)", "Kinetic Energy Prior to Core Positron Only", 1000, 0, 5.1); //8
+analysisManager->CreateH1("In BGO (P)", "Energy Deposited in BGO Photon Only", 51, 0, 5.1); //9
+analysisManager->CreateH1("In BGO (e-)", "Energy Deposited in BGO Electron Only", 51, 0, 5.1); //10
+analysisManager->CreateH1("In BGO (e+)", "Energy Deposited in BGO Position Only", 51, 0, 5.1); //11
+analysisManager->CreateH1("Prior to Crystal (P)", "Kinetic Energy Prior to Crystal Photon Only", 3000, 0, 5.1); //12
+analysisManager->CreateH1("Prior to Crystal (e-)", "Kinetic Energy Prior to Crystal Electron Only", 1000, 0, 5.1); //13
+analysisManager->CreateH1("Prior to Crystal (e+)", "Kinetic Energy Prior to Crystal Position Only", 1000, 0, 5.1); //14
+analysisManager->CreateH1("In Core (P)", "Energy Deposited in Core Photon Only", 51, 0, 5.1); //15
+analysisManager->CreateH1("In Core (e-)", "Energy Deposited in Core Electron Only", 51, 0, 5.1); //16
+analysisManager->CreateH1("In Core (e+)", "Energy Deposited in Core Positron Only", 51, 0, 5.1); //17
+analysisManager->CreateH1("After Crystal (P)", "Kinetic Energy Remaining Photon Only", 3000, 0, 5.1); //18
+analysisManager->CreateH1("After Crystal (e-)", "Kinetic Energy Remaining Electron Only", 1000, 0, 5.1); //19
+analysisManager->CreateH1("After Crystal (e+)", "Kinetic Energy Remaining Positron Only", 1000, 0, 5.1); //20
+
+analysisManager->CreateH1("In BGO front","Energy Deposited in the front of the BGO",51,0,5.1); //21
 }
 
 RunAction::~RunAction()

@@ -26,6 +26,7 @@ class EventAction : public G4UserEventAction
     void AddEdepCoreEMIN(G4double Edep);
     void AddEdepBGOEPLUS(G4double Edep);
     void AddEdepCoreEPLUS(G4double Edep);
+    void AddEdepCorefront(G4double trackerEdep);
     void AddKin(G4double kineticEnergy);
 
   private:
@@ -37,6 +38,7 @@ class EventAction : public G4UserEventAction
     G4double fTotalEnergyDepositCOREEMIN;
     G4double fTotalEnergyDepositBGOEPLUS;
     G4double fTotalEnergyDepositCOREEPLUS;
+    G4double fTotalEnergyDepositBGOfront;
     G4double fKin;
 
 };
@@ -57,6 +59,8 @@ class EventAction : public G4UserEventAction
       fTotalEnergyDepositBGOEPLUS += Edep;}
     inline void EventAction::AddEdepCoreEPLUS(G4double Edep) {
       fTotalEnergyDepositCOREEPLUS += Edep;}
+    inline void EventAction::AddEdepCorefront(G4double trackerEdep) {
+      fTotalEnergyDepositBGOfront += trackerEdep;}
     inline void EventAction::AddKin(G4double kineticEnergy) {
       fKin += kineticEnergy;}
 

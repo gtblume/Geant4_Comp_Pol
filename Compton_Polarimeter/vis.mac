@@ -1,4 +1,4 @@
-# Macro file for the visualization setting in the initialization phase 
+# Macro file for the visualization setting in the initialization phase
 # of the B1 example when running in interactive mode
 #
 
@@ -97,6 +97,10 @@
 /vis/geometry/set/colour Wall 0 .2 .8 .2 .7
 /vis/geometry/set/colour Wall1 0 .2 .8 .2 .7
 /vis/geometry/set/colour Wall2 0 .2 .8 .2 .7
+/vis/geometry/set/colour BGOs 0 .2 .8 .2 0.
+/vis/geometry/set/colour BGOf 0 .2 .8 .2 0.
+/vis/geometry/set/colour BGOb 0 .2 .8 .2 0.
+#/vis/geometry/set/colour Wall3 0 .2 .8 .2 .7
 #/vis/geometry/set/colour abs2 0 .5 0 0 1
 #/vis/geometry/set/colour abs3 0 .5 0 0 1
 #/vis/geometry/set/colour iWall1 0 0 0 .55 .5
@@ -104,14 +108,18 @@
 #/vis/geometry/set/colour oWall2 0 0 0 .55 .5
 #/vis/geometry/set/colour oWall3 0 0 0 .55 .5
 #/vis/geometry/set/colour oWall4 0 0 0 .55 .5
-#/vis/geometry/set/colour oWall5 0 0 0 .55 .5
-#/vis/geometry/set/colour oWall6 0 0 0 .55 .5
-#/vis/geometry/set/colour oWall2 0 0 0 .55 .5
+/vis/geometry/set/colour World 0 0 0 .55 0
+/vis/geometry/set/colour pipe 0 .3 .3 .3 .2
+/vis/geometry/set/colour vac 0 1 1 1 .08
 /vis/viewer/set/style wireframe
 /vis/viewer/set/hiddenMarker true
 #/vis/viewer/set/viewpointThetaPhi 270 0
+#/vis/viewer/set/viewpointThetaPhi 0 270
 /vis/viewer/set/viewpointThetaPhi 230 -20
-/vis/scene/add/magneticField 64
+#/vis/scene/add/magneticField 128
+
+#/vis/viewer/zoom 6
+#/vis/viewer/panTo .16 0
 #
 #define our scoring mesh
 #/score/create/boxMesh 3wall_1

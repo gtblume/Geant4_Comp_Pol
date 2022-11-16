@@ -48,6 +48,7 @@ set(COMPTON_SCRIPTS
   vis.mac
   random.mac
   B_Field_Full_cm.TABLE
+  steel1010.table
   )
 
 foreach(_script ${COMPTON_SCRIPTS})
