@@ -1,0 +1,68 @@
+/run/verbose 2
+/run/initialize
+/control/execute vis.mac
+/vis/open OGL 1300x1300-0+0
+/vis/sceneHandler/create OGL
+/vis/viewer/create ! ! 1300x1300-0+0
+/vis/viewer/refresh
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world -1 -1 none m 0 0 0 0 0 0
+/vis/sceneHandler/attach
+/vis/viewer/set/viewpointVector -1 0 0
+/vis/viewer/set/lightsVector -1 0 0
+/vis/viewer/set/style wireframe
+/vis/viewer/set/auxiliaryEdge true
+/vis/viewer/set/lineSegmentsPerCircle 100
+/vis/scene/add/trajectories smooth
+/tracking/storeTrajectory 2
+/vis/scene/notifyHandlers
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/scene/notifyHandlers scene-0
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+/vis/scene/notifyHandlers scene-0
+/vis/scene/endOfEventAction accumulate
+/vis/set/textColour green
+/vis/set/textLayout right
+/vis/scene/add/text2D 0.9 -.9 24 ! ! Coconut Water
+/vis/scene/notifyHandlers
+/vis/set/textLayout
+/vis/set/textColour
+/vis/scene/add/date
+/vis/scene/notifyHandlers
+/vis/set/colour red
+/vis/set/lineWidth 2
+/vis/scene/add/frame
+/vis/scene/notifyHandlers
+/vis/set/colour
+/vis/set/lineWidth
+/vis/geometry/set/colour Wall 0 .2 .8 .2 .7
+/vis/scene/notifyHandlers
+/vis/geometry/set/colour Wall1 0 .2 .8 .2 .7
+/vis/scene/notifyHandlers
+/vis/geometry/set/colour Wall2 0 .2 .8 .2 .7
+/vis/scene/notifyHandlers
+/vis/geometry/set/colour BGOs 0 .2 .8 .2 0.
+/vis/scene/notifyHandlers
+/vis/geometry/set/colour BGOf 0 .2 .8 .2 0.
+/vis/scene/notifyHandlers
+/vis/geometry/set/colour BGOb 0 .2 .8 .2 0.
+/vis/scene/notifyHandlers
+/vis/geometry/set/colour World 0 0 0 .55 0
+/vis/scene/notifyHandlers
+/vis/geometry/set/colour pipe 0 .3 .3 .3 .2
+/vis/scene/notifyHandlers
+/vis/geometry/set/colour vac 0 1 1 1 .08
+/vis/scene/notifyHandlers
+/vis/viewer/set/style wireframe
+/vis/viewer/set/hiddenMarker true
+/vis/viewer/set/viewpointThetaPhi 230 -20
+/vis/viewer/set/autoRefresh true
+/vis/viewer/refresh
+/vis/verbose warnings
+/random/setSeeds -500471663 193767847
+/vis/viewer/zoom 3
+/vis/viewer/refresh

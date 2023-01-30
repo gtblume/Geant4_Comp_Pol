@@ -21,7 +21,7 @@
 #
 #/random/setSeeds 991234180 -330234525
 /process/em/lowestElectronEnergy 0.0 eV
-/run/beamOn 1000000
+/run/beamOn 10000000
 #/run/beamOn 10000000
 #/run/beamOn 10000000
 #/run/beamOn 10000000

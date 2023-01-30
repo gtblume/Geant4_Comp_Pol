@@ -14,6 +14,7 @@ TabulatedField3D::TabulatedField3D(const char* filename,
 {
 
   double lenUnit= 2*mm;
+  // double lenUnit= cm;
   double fieldUnit= tesla;
   G4cout << "\n-----------------------------------------------------------"
 	 << "\n      Magnetic field"
@@ -99,6 +100,12 @@ TabulatedField3D::TabulatedField3D(const char* filename,
   G4cout << "\n ---> ... done reading " << G4endl;
 
   // G4cout << " Read values of field from file " << filename << G4endl;
+  // G4cout << " ---> assumed the order:  x, y, z, Bx, By, Bz "
+	//  << "\n ---> Min values x,y,z: "
+	//  << minx/cm << " " << miny/cm << " " << minz/cm << " cm "
+	//  << "\n ---> Max values x,y,z: "
+	//  << maxx/cm << " " << maxy/cm << " " << maxz/cm << " cm "
+	//  << "\n ---> The field will be offset by " << zOffset/cm << " cm " << G4endl;
   G4cout << " ---> assumed the order:  x, y, z, Bx, By, Bz "
 	 << "\n ---> Min values x,y,z: "
 	 << minx/(2*mm) << " " << miny/(2*mm) << " " << minz/(2*mm) << " mm "
@@ -110,6 +117,11 @@ TabulatedField3D::TabulatedField3D(const char* filename,
   if (maxx < minx) {swap(maxx,minx); invertX = true;}
   if (maxy < miny) {swap(maxy,miny); invertY = true;}
   if (maxz < minz) {swap(maxz,minz); invertZ = true;}
+  // G4cout << "\nAfter reordering if neccesary"
+  //  << "\n ---> Min values x,y,z: "
+  //  << minx/cm << " " << miny/cm << " " << minz/cm << " cm "
+  //  << " \n ---> Max values x,y,z: "
+  //  << maxx/cm << " " << maxy/cm << " " << maxz/cm << " cm ";
   G4cout << "\nAfter reordering if neccesary"
 	 << "\n ---> Min values x,y,z: "
 	 << minx/(2*mm) << " " << miny/(2*mm) << " " << minz/(2*mm) << " mm "
@@ -119,6 +131,9 @@ TabulatedField3D::TabulatedField3D(const char* filename,
   dx = maxx - minx;
   dy = maxy - miny;
   dz = maxz - minz;
+  // G4cout << "\n ---> Dif values x,y,z (range): "
+  //  << dx/cm << " " << dy/cm << " " << dz/cm << " cm in z "
+  //  << "\n-----------------------------------------------------------" << G4endl;
   G4cout << "\n ---> Dif values x,y,z (range): "
 	 << dx/(2*mm) << " " << dy/(2*mm) << " " << dz/(2*mm) << "mm in z "
 	 << "\n-----------------------------------------------------------" << G4endl;

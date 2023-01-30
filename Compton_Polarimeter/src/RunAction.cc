@@ -52,7 +52,7 @@ analysisManager->CreateH1("In Core", "Energy Deposited in Core", 51, 0, 5.1); //
 analysisManager->CreateH1("After Crystal", "Kinetic Energy Remaining", 1000, 0, 5.1); //5
 //
 analysisManager->CreateH2("X-ray Strikes", "x,y", 30, -10, 10, 30, -10, 10); //1
-analysisManager->CreateH2("Beam Distribution", "x,y", 30, -10, 10, 30, -10, 10); //2
+analysisManager->CreateH2("Beam Distribution", "x,y", 600, -1, 1, 600, -1, 1); //2
 // analysisManager->CreateH1("y", "y", 300, 0, 5.1); //2
 analysisManager->CreateH1("Prior to Core (P)", "Kinetic Energy Prior to Core Photon Only", 3000, 0, 5.1); //6
 analysisManager->CreateH1("Prior to Core (e-)", "Kinetic Energy Prior to Core Electron Only", 1000, 0, 5.1); //7

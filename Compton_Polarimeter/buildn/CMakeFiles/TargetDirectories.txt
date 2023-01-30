@@ -1,0 +1,8 @@
+/home/greg/Github_code/Geant4_Comp_Pol/Compton_Polarimeter/buildn/CMakeFiles/install/strip.dir
+/home/greg/Github_code/Geant4_Comp_Pol/Compton_Polarimeter/buildn/CMakeFiles/install/local.dir
+/home/greg/Github_code/Geant4_Comp_Pol/Compton_Polarimeter/buildn/CMakeFiles/install.dir
+/home/greg/Github_code/Geant4_Comp_Pol/Compton_Polarimeter/buildn/CMakeFiles/list_install_components.dir
+/home/greg/Github_code/Geant4_Comp_Pol/Compton_Polarimeter/buildn/CMakeFiles/rebuild_cache.dir
+/home/greg/Github_code/Geant4_Comp_Pol/Compton_Polarimeter/buildn/CMakeFiles/edit_cache.dir
+/home/greg/Github_code/Geant4_Comp_Pol/Compton_Polarimeter/buildn/CMakeFiles/C1.dir
+/home/greg/Github_code/Geant4_Comp_Pol/Compton_Polarimeter/buildn/CMakeFiles/Compton.dir

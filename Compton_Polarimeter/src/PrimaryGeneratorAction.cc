@@ -6,6 +6,7 @@
 #include "G4PhysicalConstants.hh"
 #include "G4SystemOfUnits.hh"
 #include "Randomize.hh"
+#include "G4INCLRandom.hh"
 
 PrimaryGeneratorAction::PrimaryGeneratorAction()
 {
@@ -20,7 +21,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
   fParticleGun->SetParticleDefinition(particle);
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
   fParticleGun->SetParticleEnergy(5*MeV);
-  fParticleGun->SetParticlePolarization(G4ThreeVector(0,0,-1));
+  fParticleGun->SetParticlePolarization(G4ThreeVector(0,0,1));
 
 }
 
@@ -33,10 +34,13 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
 
 // this can be adjusted to be whatever distribution wanted
-  G4double envSizeXY =20*cm;
+  // G4double envSizeXY =20*cm;
 
-  G4double x0 = 0.04 * envSizeXY * (G4UniformRand()-0.5);
-  G4double y0 = 0.04 * envSizeXY * (G4UniformRand()-0.5);
+// shoot seem to generate 1-100 so we reduce scale by order of magnitude to correct
+  G4double x0 = .0219*mm * (G4RandGauss::shoot());
+  G4double y0 = .0219*mm * (G4RandGauss::shoot());
+  // G4double x0 = .1*mm * (G4RandGauss::shoot());
+  // G4double y0 = .1*mm * (G4RandGauss::shoot());
 
   fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,-80*cm));
 
